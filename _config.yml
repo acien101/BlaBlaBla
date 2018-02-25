@@ -9,7 +9,7 @@ name: Bla Bla Bla
 description: Draft
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: images/logo.png
+avatar: /BlaBlaBla/images/logo.png
 
 #
 # Flags below are optional
