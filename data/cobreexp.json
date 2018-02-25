@@ -1,0 +1,24 @@
+{
+    "datos" : [
+        { "tiempo" : 0, "temperatura" : 28.0},
+        { "tiempo" : 30, "temperatura" : 28.8},
+        { "tiempo" : 60, "temperatura" : 30.3},
+        { "tiempo" : 90, "temperatura" : 32.1},
+        { "tiempo" : 120, "temperatura" : 33.9},
+        { "tiempo" : 150, "temperatura" : 35.8},
+        { "tiempo" : 180, "temperatura" : 37.5},
+        { "tiempo" : 210, "temperatura" : 39.5},
+        { "tiempo" : 240, "temperatura" : 41.5},
+        { "tiempo" : 270, "temperatura" : 43.5},
+        { "tiempo" : 300, "temperatura" : 45.5},
+        { "tiempo" : 330, "temperatura" : 47.2},
+        { "tiempo" : 360, "temperatura" : 49.0},
+        { "tiempo" : 390, "temperatura" : 50.7},
+        { "tiempo" : 420, "temperatura" : 52.7},
+        { "tiempo" : 450, "temperatura" : 54.4},
+        { "tiempo" : 480, "temperatura" : 56.1},
+        { "tiempo" : 510, "temperatura" : 57.9},
+        { "tiempo" : 540, "temperatura" : 59.6},
+        { "tiempo" : 570, "temperatura" : 61.2}
+    ]
+}

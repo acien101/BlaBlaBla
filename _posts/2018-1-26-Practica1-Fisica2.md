@@ -14,7 +14,7 @@ Esta práctica consistirá en determinar los calores específicos de diferentes 
 <img src="../images/sustancias.jpg" width="64%">
 <img src="../images/termometro.jpg" width="35%">
 
-Los objetivos de la prática para las sustancias de Cobre, Hierro, Alumnio y Agua:
+Los objetivos de la prática para las sustancias de Cobre, Hierro, Aluminio y Agua:
 * Determinar el error cometido al medir la temperatura, la energía aportada y las masas.
 * Realizar de calor y temperatura
 * Razonar el comportamiento de la curva
@@ -36,4 +36,261 @@ La temperatura del agua del grifo inicialmente es de 23.3ºC, y el agua empieza 
 
 #### Realización
 
-Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatura inicial de 23.3ºC hasta los 35.7ºC**.
+Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatura inicial de 23.3ºC hasta los 35.7ºC**. Los datos se encuentran [aquí](../data/aguaexp.json) y su gráfica sería:
+
+<div id="agua_chart" style="width: 900px; height: 500px"></div>
+
+### Cobre
+#### Planteamiento
+#### Realización
+
+<div id="cobre_chart" style="width: 900px; height: 500px"></div>
+
+### Aluminio
+#### Planteamiento
+#### Realización
+
+<div id="aluminio_chart" style="width: 900px; height: 500px"></div>
+
+### Hierro
+#### Planteamiento
+#### Realizacion
+
+<div id="hierro_chart" style="width: 900px; height: 500px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawAgua);
+      google.charts.setOnLoadCallback(drawAluminio);
+      google.charts.setOnLoadCallback(drawCobre);
+      google.charts.setOnLoadCallback(drawHierro);
+
+      function drawAgua() {
+        var request = new XMLHttpRequest();
+        request.open("GET", "../data/aguaexp.json", true);
+        request.send(null);
+        request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == "200") {
+              var my_JSON_object = JSON.parse(request.responseText);
+
+              var data = new google.visualization.DataTable();
+              data.addColumn('number', 'Tiempo (s)');
+              data.addColumn('number', 'Temperatura (ºC)');
+
+              my_JSON_object.datos.forEach(function(element){
+                  data.addRow([element.tiempo, element.temperatura]);
+              });
+
+              var options = {
+                title: 'Company Performance',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+              };
+
+              var chart = new google.charts.Line(document.getElementById('agua_chart'));
+
+              chart.draw(data, options);
+          }
+        };
+      }
+
+      function drawAluminio() {
+        var request = new XMLHttpRequest();
+        request.open("GET", "../data/aluminioexp.json", true);
+        request.send(null);
+        request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == "200") {
+              var my_JSON_object = JSON.parse(request.responseText);
+
+              var data = new google.visualization.DataTable();
+              data.addColumn('number', 'Tiempo (s)');
+              data.addColumn('number', 'Temperatura (ºC)');
+
+              my_JSON_object.datos.forEach(function(element){
+                  data.addRow([element.tiempo, element.temperatura]);
+              });
+
+              var options = {
+                title: 'Company Performance',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+              };
+
+              var chart = new google.charts.Line(document.getElementById('aluminio_chart'));
+
+              chart.draw(data, options);
+          }
+        };
+      }
+
+      function drawCobre() {
+        var request = new XMLHttpRequest();
+        request.open("GET", "../data/cobreexp.json", true);
+        request.send(null);
+        request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == "200") {
+              var my_JSON_object = JSON.parse(request.responseText);
+
+              var data = new google.visualization.DataTable();
+              data.addColumn('number', 'Tiempo (s)');
+              data.addColumn('number', 'Temperatura (ºC)');
+
+              my_JSON_object.datos.forEach(function(element){
+                  data.addRow([element.tiempo, element.temperatura]);
+              });
+
+              var options = {
+                title: 'Company Performance',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+              };
+
+              var chart = new google.charts.Line(document.getElementById('cobre_chart'));
+
+              chart.draw(data, options);
+          }
+        };
+      }
+
+      function drawHierro() {
+        var request = new XMLHttpRequest();
+        request.open("GET", "../data/hierroexp.json", true);
+        request.send(null);
+        request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == "200") {
+              var my_JSON_object = JSON.parse(request.responseText);
+
+              var data = new google.visualization.DataTable();
+              data.addColumn('number', 'Tiempo (s)');
+              data.addColumn('number', 'Temperatura (ºC)');
+
+              my_JSON_object.datos.forEach(function(element){
+                  data.addRow([element.tiempo, element.temperatura]);
+              });
+
+              var options = {
+                title: 'Company Performance',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+              };
+
+              var chart = new google.charts.Line(document.getElementById('hierro_chart'));
+
+              chart.draw(data, options);
+          }
+        };
+      }
+
+</script>
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+
+      var request = new XMLHttpRequest();
+      request.open("GET", "../data/cobreexp.json", false);
+      request.send(null);
+      var my_JSON_object = JSON.parse(request.responseText);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Tiempo (s)');
+        data.addColumn('number', 'Temperatura (ºC)');
+
+        my_JSON_object.datos.forEach(function(element){
+            data.addRow([element.tiempo, element.temperatura]);
+        });
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.charts.Line(document.getElementById('cobre_chart'));
+
+        chart.draw(data, options);
+      }
+</script>
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+
+      var request = new XMLHttpRequest();
+      request.open("GET", "../data/aluminioexp.json", false);
+      request.send(null);
+      var my_JSON_object = JSON.parse(request.responseText);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Tiempo (s)');
+        data.addColumn('number', 'Temperatura (ºC)');
+
+        my_JSON_object.datos.forEach(function(element){
+            data.addRow([element.tiempo, element.temperatura]);
+        });
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.charts.Line(document.getElementById('aluminio_chart'));
+
+        chart.draw(data, options);
+      }
+</script>
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+
+      var request = new XMLHttpRequest();
+      request.open("GET", "../data/hierroexp.json", false);
+      request.send(null);
+      var my_JSON_object = JSON.parse(request.responseText);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Tiempo (s)');
+        data.addColumn('number', 'Temperatura (ºC)');
+
+        my_JSON_object.datos.forEach(function(element){
+            data.addRow([element.tiempo, element.temperatura]);
+        });
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.charts.Line(document.getElementById('hierro_chart'));
+
+        chart.draw(data, options);
+      }
+</script>
