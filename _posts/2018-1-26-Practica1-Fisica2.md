@@ -167,13 +167,9 @@ La temperatura del agua del grifo inicialmente es de 23.3ºC, y el agua empieza 
 
 #### Realización
 
-Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatura inicial de 23.3ºC hasta los 35.7ºC**. Los datos obtenidos se encuentran [aquí](../data/aguaexp.json). Su gráfica de temperatura frente a tiempo sería la siguiente:
+Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatura inicial de 23.3ºC hasta los 35.7ºC**. Los datos obtenidos se encuentran [aquí](../data/aguaexp.json). Su gráfica de Calor frente a temperatura, utilizando <a href="#defCalor">esta expresión</a>, sería la siguiente:
 
-<div id="agua_chart" style="width: 900px; height: 500px"></div>
-
-La gráfica de Calor frente a temperatura, utilizando <a href="#defCalor">esta expresión</a>, sería la siguiente:
-
-<div id="agua2_chart" style="width: 900px; height: 500px"></div>
+<iframe width="912" height="564" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1712134363&amp;format=interactive"></iframe>
 
 Las curvas no son excesivamente rectas, empezando con un poco menos de inclinación y luego ya siendo más constantes. **La inclinación del inicio** se debe a que el calentador está todavía calentando el metal y eso hace que la inclinacón sea menor y no tan constante como en la demás parte de la recta. **Esto se solucionaría eliminando los primeros valores**, pues no determinan bien la variación de temperatura. Además nos encontramos con otro problema y es que  la curva no es excesivamente recta, cuando **debería de ser lineal**. El problema se debe a que el volumen de datos obtenidos es un poco escaso, con lo que **deberían de ser más datos**.
 
@@ -182,19 +178,19 @@ Las curvas no son excesivamente rectas, empezando con un poco menos de inclinaci
 #### Planteamiento
 #### Realización
 
-<div id="cobre_chart" style="width: 900px; height: 500px"></div>
+<iframe width="901" height="557" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1441252593&amp;format=interactive"></iframe>
 
 ### Aluminio
 #### Planteamiento
 #### Realización
 
-<div id="aluminio_chart" style="width: 900px; height: 500px"></div>
+<iframe width="912" height="564" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1040109177&amp;format=interactive"></iframe>
 
 ### Hierro
 #### Planteamiento
 #### Realizacion
 
-<div id="hierro_chart" style="width: 900px; height: 500px"></div>
+<iframe width="933" height="577" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1622749977&amp;format=interactive"></iframe>
 
 ### Bibliografía
 * https://es.wikipedia.org/wiki/Calor_espec%C3%ADfico
@@ -202,142 +198,3 @@ Las curvas no son excesivamente rectas, empezando con un poco menos de inclinaci
 * https://developers.google.com/chart/interactive/docs/gallery/linechart#examples
 
 * https://es.wikipedia.org/wiki/Potencia_(f%C3%ADsica)
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-      google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawAgua);
-      google.charts.setOnLoadCallback(drawAluminio);
-      google.charts.setOnLoadCallback(drawCobre);
-      google.charts.setOnLoadCallback(drawHierro);
-
-      function drawAgua() {
-        var request = new XMLHttpRequest();
-        request.open("GET", "../data/aguaexp.json", true);
-        request.send(null);
-        request.onreadystatechange = function () {
-          if (request.readyState == 4 && request.status == "200") {
-              var my_JSON_object = JSON.parse(request.responseText);
-
-              // Datos de la gráfica de temperatura frente a tiempo
-              var data = new google.visualization.DataTable();
-              data.addColumn('number', 'Tiempo (s)');
-              data.addColumn('number', 'Temperatura (ºC)');
-
-              my_JSON_object.datos.forEach(function(element){
-                  data.addRow([element.tiempo, element.temperatura]);
-              });
-
-              //Datos de la gráfica de calor frente a temperatura
-
-              var data2 = new google.visualization.DataTable();
-              data2.addColumn('number', 'Calor (cal)');
-              data2.addColumn('number', 'Temperatura (ºC)');
-
-              my_JSON_object.datos.forEach(function(element){
-                  data2.addRow([7.63 * element.tiempo, element.temperatura]);
-              });
-
-              var options = {
-                title: 'Company Performance',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-              };
-
-              var chart = new google.charts.Line(document.getElementById('agua_chart'));
-              var chart2 = new google.charts.Line(document.getElementById('agua2_chart'));
-
-              chart.draw(data, options);
-              chart2.draw(data2, options);
-          }
-        };
-      }
-
-      function drawAluminio() {
-        var request = new XMLHttpRequest();
-        request.open("GET", "../data/aluminioexp.json", true);
-        request.send(null);
-        request.onreadystatechange = function () {
-          if (request.readyState == 4 && request.status == "200") {
-              var my_JSON_object = JSON.parse(request.responseText);
-
-              var data = new google.visualization.DataTable();
-              data.addColumn('number', 'Tiempo (s)');
-              data.addColumn('number', 'Temperatura (ºC)');
-
-              my_JSON_object.datos.forEach(function(element){
-                  data.addRow([element.tiempo, element.temperatura]);
-              });
-
-              var options = {
-                title: 'Company Performance',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-              };
-
-              var chart = new google.charts.Line(document.getElementById('aluminio_chart'));
-
-              chart.draw(data, options);
-          }
-        };
-      }
-
-      function drawCobre() {
-        var request = new XMLHttpRequest();
-        request.open("GET", "../data/cobreexp.json", true);
-        request.send(null);
-        request.onreadystatechange = function () {
-          if (request.readyState == 4 && request.status == "200") {
-              var my_JSON_object = JSON.parse(request.responseText);
-
-              var data = new google.visualization.DataTable();
-              data.addColumn('number', 'Tiempo (s)');
-              data.addColumn('number', 'Temperatura (ºC)');
-
-              my_JSON_object.datos.forEach(function(element){
-                  data.addRow([element.tiempo, element.temperatura]);
-              });
-
-              var options = {
-                title: 'Company Performance',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-              };
-
-              var chart = new google.charts.Line(document.getElementById('cobre_chart'));
-
-              chart.draw(data, options);
-          }
-        };
-      }
-
-      function drawHierro() {
-        var request = new XMLHttpRequest();
-        request.open("GET", "../data/hierroexp.json", true);
-        request.send(null);
-        request.onreadystatechange = function () {
-          if (request.readyState == 4 && request.status == "200") {
-              var my_JSON_object = JSON.parse(request.responseText);
-
-              var data = new google.visualization.DataTable();
-              data.addColumn('number', 'Tiempo (s)');
-              data.addColumn('number', 'Temperatura (ºC)');
-
-              my_JSON_object.datos.forEach(function(element){
-                  data.addRow([element.tiempo, element.temperatura]);
-              });
-
-              var options = {
-                title: 'Company Performance',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-              };
-
-              var chart = new google.charts.Line(document.getElementById('hierro_chart'));
-
-              chart.draw(data, options);
-          }
-        };
-      }
-
-</script>
