@@ -16,10 +16,33 @@ Esta práctica consistirá en determinar los calores específicos de diferentes 
 
 Los objetivos de la prática para las sustancias de Cobre, Hierro, Aluminio y Agua:
 * Determinar el error cometido al medir la temperatura, la energía aportada y las masas.
-* Realizar de calor y temperatura
+* Gráfica de calor y temperatura
 * Razonar el comportamiento de la curva
 * Determinar la pendiente mediante un ajuste por mínimos cuadrados, y determinar su error cuadrático médio.
 * Determinar el error de los calores absolutos con sus errores absolutos. Comparar estas medidas con los valores reales.
+
+### Determinar el calor específico
+
+Nuestra situación es la siguiente, tenemos una fuente de alimentación que nos proporciona un calor, y medimos como varía la temperatura de diferentes sustancias. ¿Cómo determinamos el calor específico?
+
+La **capacidad calorífica específica media** \\(C_e\\) se define como
+
+$$
+
+C_e = \frac{Q}{m \cdot \Delta T}
+
+$$
+
+Siendo:
+* **Q**: Es la tranferencia de energía en forma calorífica entre el sistema y su entorno y otro sistema, es decir, el calor que le proporcionamos al material con nuestra fuente de alimentación. **Se mide en calorias**. \\(1 cal \Rightarrow 4.18 J\\)
+* **m** la masa del sistema.
+* \\( \Delta T \\): El incremento de temperatura del sistema.
+* \\(C_e\\): El calor específico.
+
+Por otro lado, en la fuente de alimentación, se define potencia instantanea
+
+### Cálculo de errores
+
 
 ### Agua
 #### Planteamiento
@@ -39,6 +62,8 @@ La temperatura del agua del grifo inicialmente es de 23.3ºC, y el agua empieza 
 Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatura inicial de 23.3ºC hasta los 35.7ºC**. Los datos se encuentran [aquí](../data/aguaexp.json) y su gráfica sería:
 
 <div id="agua_chart" style="width: 900px; height: 500px"></div>
+
+
 
 ### Cobre
 #### Planteamiento
@@ -74,7 +99,10 @@ Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatur
 
 
 
+### Bibliografía
+* https://es.wikipedia.org/wiki/Calor_espec%C3%ADfico
 
+* https://developers.google.com/chart/interactive/docs/gallery/linechart#examples
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
@@ -200,97 +228,4 @@ Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatur
         };
       }
 
-</script>
-
-<script type="text/javascript">
-      google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawChart);
-
-
-      var request = new XMLHttpRequest();
-      request.open("GET", "../data/cobreexp.json", false);
-      request.send(null);
-      var my_JSON_object = JSON.parse(request.responseText);
-
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'Tiempo (s)');
-        data.addColumn('number', 'Temperatura (ºC)');
-
-        my_JSON_object.datos.forEach(function(element){
-            data.addRow([element.tiempo, element.temperatura]);
-        });
-
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.charts.Line(document.getElementById('cobre_chart'));
-
-        chart.draw(data, options);
-      }
-</script>
-
-<script type="text/javascript">
-      google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawChart);
-
-
-      var request = new XMLHttpRequest();
-      request.open("GET", "../data/aluminioexp.json", false);
-      request.send(null);
-      var my_JSON_object = JSON.parse(request.responseText);
-
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'Tiempo (s)');
-        data.addColumn('number', 'Temperatura (ºC)');
-
-        my_JSON_object.datos.forEach(function(element){
-            data.addRow([element.tiempo, element.temperatura]);
-        });
-
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.charts.Line(document.getElementById('aluminio_chart'));
-
-        chart.draw(data, options);
-      }
-</script>
-
-<script type="text/javascript">
-      google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawChart);
-
-
-      var request = new XMLHttpRequest();
-      request.open("GET", "../data/hierroexp.json", false);
-      request.send(null);
-      var my_JSON_object = JSON.parse(request.responseText);
-
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'Tiempo (s)');
-        data.addColumn('number', 'Temperatura (ºC)');
-
-        my_JSON_object.datos.forEach(function(element){
-            data.addRow([element.tiempo, element.temperatura]);
-        });
-
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.charts.Line(document.getElementById('hierro_chart'));
-
-        chart.draw(data, options);
-      }
 </script>
