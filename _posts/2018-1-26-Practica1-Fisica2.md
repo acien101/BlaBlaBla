@@ -119,7 +119,7 @@ $$
 
 $$
 
-Para calcular el error absoluto del calor específico se haría así:
+Para calcular el error absoluto del calor específico se haría <a name="calorEspecifico" style="text-decoration: none;">así</a>:
 
 $$
 
@@ -171,7 +171,108 @@ Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatur
 
 <iframe width="912" height="564" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1712134363&amp;format=interactive"></iframe>
 
-Las curvas no son excesivamente rectas, empezando con un poco menos de inclinación y luego ya siendo más constantes. **La inclinación del inicio** se debe a que el calentador está todavía calentando el metal y eso hace que la inclinacón sea menor y no tan constante como en la demás parte de la recta. **Esto se solucionaría eliminando los primeros valores**, pues no determinan bien la variación de temperatura. Además nos encontramos con otro problema y es que  la curva no es excesivamente recta, cuando **debería de ser lineal**. El problema se debe a que el volumen de datos obtenidos es un poco escaso, con lo que **deberían de ser más datos**.
+La gráfica presenta un leve curva al principio, **la inclinación del inicio** se debe a que el calentador está todavía calentando el metal y eso hace que la inclinacón sea menor y no tan constante como en la demás parte de la recta. **Esto se solucionaría eliminando los primeros valores**, pues no determinan bien la variación de temperatura. Además nos encontramos con otro problema y es que  la gráfica no es excesivamente recta, cuando **debería de ser lineal**. El problema se debe a que el volumen de datos obtenidos es un poco escaso, con lo que **deberían de ser más datos**.
+
+#### Ajuste por mínimos cuadrados
+
+Al ser una relación *aparentemente* lineal podremos aproximarlo a una recta de la forma:
+
+$$
+
+Y = mX + c
+
+$$
+
+Donde m se denomina *pendiente* y *c* ordenada en el origen.
+
+Para obtener dicha función usaremos el método de mínimos cuadrados, que nos permite obtener la recta que más se aproxima a dichos puntos. La pendiente y la ordenada en el origen de dicha recta vienen dadas por las siguientes expresiones:
+
+$$
+
+m = \frac{E}{D}
+
+\qquad
+
+c = \bar{Y} - m \bar{X}
+
+$$
+
+En donde:
+
+$$
+
+E = \Bigg ( \sum_{i = 1}^{n} X_i Y_i \Bigg ) - n \bar{X} \bar{Y}
+
+\qquad
+
+D = \Bigg ( \sum_{i = 1}^{n} X_{i}^{2} \Bigg ) - n \bar{X}^{2}
+
+$$
+
+Siendo
+
+$$
+
+\bar{X} = \frac{1}{n} \sum_{i = 1}^{n} X_i
+
+\qquad
+
+\bar{Y} = \frac{1}{n} \sum_{i = 1}^{n} Y_i
+
+$$
+
+Operando con los resultados obtenidos llegamos a que la **pendiente** es \\(m = 1.9\cdot 10^{-3}\\) y la ordenada en el origen es \\(c = 23.13\\). Se queda tal que:
+
+$$
+
+Y = 1.9\cdot 10^{-3}X + 23.13
+
+$$
+
+Para calcular el **error cuadrático medio de la pendiente m** se calcula así:
+
+$$
+
+\Delta m \cong \sqrt{\frac{A}{\sum_{i = 1}^{n} (D_i^2)}}
+
+$$
+
+Donde
+
+$$
+
+A = \frac{\sum_{i = 1}^{n} d_i^2}{n - 2}
+
+\qquad
+
+d_i = Y_i - m X_i - c
+
+\\
+
+\sum_{i = 1}^{n} (D_i^2) = \sum_{i = 1}^{n} (X_i - \bar{X})^2
+
+$$
+
+Operando **llegamos** a que:
+
+$$
+
+\Delta m = 1.01\cdot 10^{-5}
+
+$$
+
+Es decir, un erro muy pequeño, los resultados se aproximan mucho a la linea, es *casi* lineal.
+
+#### Cálculo del calor específico con sus errores absolutos
+
+<a href="#calorEspecifico">Antes</a> calculamos la expresión para determinar el calor específico (\\(C_e\\)) y su error absoluto (\\(\Delta C_e\\)). Para calcular dicha expresión, substituimos con los valores (también antes mencionados) y nos sale:
+
+$$
+
+
+
+$$
+
 
 
 ### Cobre
