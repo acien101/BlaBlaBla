@@ -267,14 +267,6 @@ Es decir, un erro muy pequeño, los resultados se aproximan mucho a la linea, es
 
 <a href="#calorEspecifico">Antes</a> calculamos la expresión para determinar el calor específico (\\(C_e\\)) y su error absoluto (\\(\Delta C_e\\)). Para calcular dicha expresión, substituimos con los valores (también antes mencionados) y nos sale:
 
-$$
-
-
-
-$$
-
-
-
 ### Cobre
 #### Planteamiento
 #### Realización
