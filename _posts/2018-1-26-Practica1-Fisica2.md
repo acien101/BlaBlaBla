@@ -44,7 +44,7 @@ Por otro lado, en la fuente de alimentación, se define **potencia instantanea**
 
 $$
 
-P = V \cdot I \ quad [W]
+P = V \cdot I \quad [W]
 
 $$
 
