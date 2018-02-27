@@ -221,11 +221,11 @@ $$
 
 $$
 
-Operando con los resultados obtenidos llegamos a que la **pendiente** es \\(m = 1.9\cdot 10^{-3}\\) y la ordenada en el origen es \\(c = 23.13\\). Se queda tal que:
+Operando con los resultados obtenidos llegamos a que la **pendiente** es \\(m = 190\cdot 10^{-5}\\) y la ordenada en el origen es \\(c = 23.13\\). Se queda tal que:
 
 $$
 
-Y = 1.9\cdot 10^{-3}X + 23.13
+Y = 190\cdot 10^{-5}X + 23.13
 
 $$
 
@@ -257,7 +257,7 @@ Operando **llegamos** a que:
 
 $$
 
-\Delta m = 1.01\cdot 10^{-5}
+\Delta m = 1.0\cdot 10^{-5}
 
 $$
 
