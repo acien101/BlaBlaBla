@@ -30,7 +30,7 @@ La **capacidad calorífica** \\(C_e\\) se define como
 
 $$
 
-C_e = \frac{Q}{m \cdot \Delta T}
+C_e = \frac{Q}{m \cdot \Delta T} \quad \frac{[Cal]}{[g \cdot K]}
 
 $$
 
@@ -44,12 +44,12 @@ Por otro lado, en la fuente de alimentación, se define **potencia instantanea**
 
 $$
 
-P = V \cdot I
+P = V \cdot I \ quad [W]
 
 $$
 
 Siendo:
-* **P** es la potencia instantanea, medida en vatios. \\( [W] = \frac{[E]}{[t]}\\)
+* **P** es la potencia instantanea, medida en vatios. \\( [W] = \frac{[J]}{[s]}\\)
 * **V** es el voltaje, medida en voltios (V).
 * **I** es el amperaje, medida en amperios (A).
 
@@ -57,12 +57,12 @@ Igualmente se define la **potencia calorífica**, que es la cantidad de calor qu
 
 $$
 
-P = \frac{E}{t}
+P = \frac{E}{t} \quad [W]
 
 $$
 
 Siendo:
-* **P** es la potencia instántanea, medida en vatios. \\( [W] = \frac{[E]}{[t]}\\)
+* **P** es la potencia instántanea, medida en vatios. \\( [W] = \frac{[J]}{[s]}\\)
 * **E** es la energía proporcionada en Julios (J).
 * **t** es el tiempo, en segundos (s).
 
@@ -70,7 +70,7 @@ Juntando lo anterior, podemos igualar las potencias instantaneas para conseguir 
 
 $$
 
-E = P \cdot t = V \cdot I \cdot t
+E = P \cdot t = V \cdot I \cdot t \quad [J]
 
 $$
 
@@ -86,7 +86,7 @@ $$
 
 $$
 
-Q = E \cdot \frac{1}{4.18} = V \cdot I \cdot t \cdot \frac{1}{4.18}
+Q = E \cdot \frac{1}{4.18} = V \cdot I \cdot t \cdot \frac{1}{4.18} \quad [Cal]
 
 \\
 
@@ -98,7 +98,7 @@ Y finalemente llegamos a que:
 
 $$
 
-C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot \Delta T} = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})}
+C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot \Delta T} = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})} \quad \frac{[Cal]}{[g \cdot K]}
 $$
 
 Para calcular el calor específico necesitaremos el voltaje, la intensidad, el tiempo, la masa y la variación de temperatura, es decir, todas las variables son conocidas.
@@ -123,7 +123,7 @@ Para calcular el error absoluto del calor específico se haría <a name="calorEs
 
 $$
 
-C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})}
+C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})} \quad \frac{[Cal]}{[g \cdot K]}
 
 \\
 
@@ -138,7 +138,7 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{V \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta I
 \\+
 \Bigg \lvert \frac{V \cdot I}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta t +
-\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m + 0
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m + 0 \quad \frac{[Cal]}{[g \cdot K]}
 $$
 
 Siendo:
@@ -221,11 +221,11 @@ $$
 
 $$
 
-Operando con los resultados obtenidos llegamos a que la **pendiente** es \\(m = 190\cdot 10^{-5}\\) y la ordenada en el origen es \\(c = 23.13\\). Se queda tal que:
+Operando con los resultados obtenidos llegamos a que la **pendiente** es \\(m = 190\cdot 10^{-5} \quad \frac{[°C]}{[Cal]}\\) y la ordenada en el origen es \\(c = 23.13 \quad [°C]\\). Se queda tal que:
 
 $$
 
-Y = 190\cdot 10^{-5}X + 23.13
+Y = 190\cdot 10^{-5}X + 23.13 \quad [°C]
 
 $$
 
@@ -233,7 +233,7 @@ Para calcular el **error cuadrático medio de la pendiente m** se calcula así:
 
 $$
 
-\Delta m \cong \sqrt{\frac{A}{\sum_{i = 1}^{n} (D_i^2)}}
+\Delta m \cong \sqrt{\frac{A}{\sum_{i = 1}^{n} (D_i^2)}} 
 
 $$
 
@@ -257,11 +257,11 @@ Operando **llegamos** a que:
 
 $$
 
-\Delta m = 1.0\cdot 10^{-5}
+\Delta m = 1.0\cdot 10^{-5} \quad \frac{[°C]}{[Cal]}
 
 $$
 
-Es decir, un erro muy pequeño, los resultados se aproximan mucho a la linea, es *casi* lineal.
+Es decir, un error muy pequeño, los resultados se aproximan mucho a la linea, es *casi* lineal.
 
 #### Cálculo del calor específico con sus errores absolutos
 
