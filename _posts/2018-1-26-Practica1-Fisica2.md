@@ -289,15 +289,6 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
 
 \\
-= \Bigg \lvert \frac{I \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta V +
-\Bigg \lvert \frac{V \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta I
-\\+
-\Bigg \lvert \frac{V \cdot I}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta t +
-\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m 
-\\+ 
-\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{final}^2 )}\Bigg \lvert \Delta T +
-\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{inicial}^2 )}\Bigg \lvert \Delta T
- \\
 = \Bigg \lvert \frac{2.9 \cdot 870}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.1 +
 \Bigg \lvert \frac{11 \cdot 870}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.01
 \\+
@@ -306,13 +297,20 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \\+ 
 \Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400 \cdot 310.85^2 )}\Bigg \lvert 0.1 +
 \Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400 \cdot 298.4^2 )}\Bigg \lvert 0.1
-
-
-
-
-\quad \frac{[Cal]}{[g \cdot K]}
+= 0.23 \quad \frac{[Cal]}{[g \cdot K]}
 
 $$
+
+El resultado es que el calor específico (\\(C_e\\)) tiene un valor de \\(C_e = 1,33 \pm 0.23 
+\frac{[Cal]}{[g \cdot K]}\\). El error que tiene es del 6%, un error normal si tenemos en cuenta que 
+el material utilizado no es extremadamente preciso. El principal generador de este error es el vaso de 
+precipitado, que al tener una marca cada 50 ml su error absoluto es de \\(\pm 50\\) ml, y esto hace que 
+el error aumente considerablemente. Para hacer que el resultado sea más preciso se tendría que utilizar un 
+vaso de precipitado más preciso.
+
+El calor específico del agua según wikipedia tiene un valor de \\(C_e = 1\frac{[Cal]}{[g \cdot K]}\\) que 
+difirere un poco del nuestro. Esto es una consecuencia de lo anterior. Además para calcular el calor 
+específico se han cogido dos valores 
 
 ### Cobre
 
