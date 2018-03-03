@@ -138,7 +138,11 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{V \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta I
 \\+
 \Bigg \lvert \frac{V \cdot I}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta t +
-\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m + 0 \quad \frac{[Cal]}{[g \cdot K]}
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m 
+\\+ 
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{final}^2 )}\Bigg \lvert \Delta T +
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{inicial}^2 )}\Bigg \lvert \Delta T
+ \quad \frac{[Cal]}{[g \cdot K]}
 $$
 
 Siendo:
@@ -146,6 +150,7 @@ Siendo:
 * \\(\Delta I\\) el error del amperaje de la fuente de alimentación, \\(\Delta I = \pm 0.01 A\\).
 * \\(\Delta t\\) el error del cronómetro, \\(\Delta t = \pm 0.01 s\\).
 * \\(\Delta m\\) el error de la masa, varía dependiendo de la sustancia que estemos trabajando.
+* \\(\Delta T\\) el error de la temperatura, \\(\Delta T = 0.1\\) ºC 
 * V es el voltaje, nosotros usaremos un **voltaje de 11 V**.
 * I es el amperaje, nosotros usaremos un **amperaje de 2.9A**.
 * t es el tiempo transcurrido en el experimento, medido en segundos.
@@ -267,7 +272,51 @@ Es decir, un error muy pequeño, los resultados se aproximan mucho a la linea, e
 
 <a href="#calorEspecifico">Antes</a> calculamos la expresión para determinar el calor específico (\\(C_e\\)) y su error absoluto (\\(\Delta C_e\\)). Para calcular dicha expresión, substituimos con los valores (también antes mencionados) y nos sale:
 
+$$
+
+C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})} 
+
+\\
+
+= \frac{11 \cdot 2.9 \cdot 870}{4.18} \cdot \frac{1}{400 \cdot (310.85 - 298.4)} = 1,33 \quad \frac{[Cal]}{[g \cdot K]} 
+
+\\
+
+\Delta C_e = \Bigg \lvert \frac{\delta C_e}{\delta V} \Bigg \lvert \Delta V +
+\Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
+\Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
+\Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
+\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+
+\\
+= \Bigg \lvert \frac{I \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta V +
+\Bigg \lvert \frac{V \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta I
+\\+
+\Bigg \lvert \frac{V \cdot I}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta t +
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m 
+\\+ 
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{final}^2 )}\Bigg \lvert \Delta T +
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{inicial}^2 )}\Bigg \lvert \Delta T
+ \\
+= \Bigg \lvert \frac{2.9 \cdot 870}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.1 +
+\Bigg \lvert \frac{11 \cdot 870}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.01
+\\+
+\Bigg \lvert \frac{11 \cdot 2.9}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.01 +
+\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400^2 \cdot (310.85 - 298.4)}\Bigg \lvert 50 
+\\+ 
+\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400 \cdot 310.85^2 )}\Bigg \lvert 0.1 +
+\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400 \cdot 298.4^2 )}\Bigg \lvert 0.1
+
+
+
+
+\quad \frac{[Cal]}{[g \cdot K]}
+
+$$
+
 ### Cobre
+
+Los pasos seguidos con el el cobre han sido los mismos que para el del agua.
 #### Planteamiento
 #### Realización
 
