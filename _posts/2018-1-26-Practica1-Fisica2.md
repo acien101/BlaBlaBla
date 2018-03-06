@@ -138,8 +138,8 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{V \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta I
 \\+
 \Bigg \lvert \frac{V \cdot I}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta t +
-\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m 
-\\+ 
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m
+\\+
 \Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{final}^2 )}\Bigg \lvert \Delta T +
 \Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{inicial}^2 )}\Bigg \lvert \Delta T
  \quad \frac{[Cal]}{[g \cdot K]}
@@ -150,7 +150,7 @@ Siendo:
 * \\(\Delta I\\) el error del amperaje de la fuente de alimentación, \\(\Delta I = \pm 0.01 A\\).
 * \\(\Delta t\\) el error del cronómetro, \\(\Delta t = \pm 0.01 s\\).
 * \\(\Delta m\\) el error de la masa, varía dependiendo de la sustancia que estemos trabajando.
-* \\(\Delta T\\) el error de la temperatura, \\(\Delta T = 0.1\\) ºC 
+* \\(\Delta T\\) el error de la temperatura, \\(\Delta T = 0.1\\) ºC
 * V es el voltaje, nosotros usaremos un **voltaje de 11 V**.
 * I es el amperaje, nosotros usaremos un **amperaje de 2.9A**.
 * t es el tiempo transcurrido en el experimento, medido en segundos.
@@ -172,7 +172,7 @@ La temperatura del agua del grifo inicialmente es de 23.3ºC, y el agua empieza 
 
 #### Realización
 
-Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatura inicial de 23.3ºC hasta los 35.7ºC**. Los datos obtenidos se encuentran [aquí](../data/aguaexp.json). Su gráfica de Calor frente a temperatura, utilizando <a href="#defCalor">esta expresión</a>, sería la siguiente:
+Al realizar la prueba, **cogimos datos durante 870 segundos desde una temperatura inicial de 23.3ºC hasta los 35.7ºC**. Los datos obtenidos se encuentran [aquí](../data/aguaexp.json). Su gráfica de Calor (con la regresión lineal por ajuste de mínimos cruadrados visto más abajo y los errores de cada lectura) frente a temperatura, utilizando <a href="#defCalor">esta expresión</a>, sería la siguiente:
 
 <iframe width="912" height="564" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1712134363&amp;format=interactive"></iframe>
 
@@ -190,7 +190,7 @@ $$
 
 Donde m se denomina *pendiente* y *c* ordenada en el origen.
 
-Para obtener dicha función usaremos el método de mínimos cuadrados, que nos permite obtener la recta que más se aproxima a dichos puntos. La pendiente y la ordenada en el origen de dicha recta vienen dadas por las siguientes expresiones:
+Para obtener dicha función usaremos el método de mínimos cuadrados, que nos permite obtener la recta que más se aproxima a dichos puntos. La pendiente y la ordenada en el origen de dicha recta vienen dadas por las <a name="defError" style="text-decoration: none;">siguientes expresiones</a>:
 
 $$
 
@@ -238,7 +238,7 @@ Para calcular el **error cuadrático medio de la pendiente m** se calcula así:
 
 $$
 
-\Delta m \cong \sqrt{\frac{A}{\sum_{i = 1}^{n} (D_i^2)}} 
+\Delta m \cong \sqrt{\frac{A}{\sum_{i = 1}^{n} (D_i^2)}}
 
 $$
 
@@ -270,15 +270,15 @@ Es decir, un error muy pequeño, los resultados se aproximan mucho a la linea, e
 
 #### Cálculo del calor específico con sus errores absolutos
 
-<a href="#calorEspecifico">Antes</a> calculamos la expresión para determinar el calor específico (\\(C_e\\)) y su error absoluto (\\(\Delta C_e\\)). Para calcular dicha expresión, substituimos con los valores (también antes mencionados) y nos sale:
+<a href="#calorEspecifico">Antes</a> calculamos la expresión para determinar el calor específico (\\(C_e\\)) y su error absoluto (\\(\Delta C_e\\)). Para calcular dicha expresión, substituimos con los valores (también antes mencionados) y <a name="defCalorEsp" style="text-decoration: none;">nos sale</a>:
 
 $$
 
-C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})} 
+C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})}
 
 \\
 
-= \frac{11 \cdot 2.9 \cdot 870}{4.18} \cdot \frac{1}{400 \cdot (310.85 - 298.4)} = 1,33 \quad \frac{[Cal]}{[g \cdot K]} 
+= \frac{11 \cdot 2.9 \cdot 870}{4.18} \cdot \frac{1}{400 \cdot (310.85 - 298.4)} = 1,33 \quad \frac{[Cal]}{[g \cdot K]}
 
 \\
 
@@ -293,48 +293,230 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{11 \cdot 870}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.01
 \\+
 \Bigg \lvert \frac{11 \cdot 2.9}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.01 +
-\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400^2 \cdot (310.85 - 298.4)}\Bigg \lvert 50 
-\\+ 
+\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400^2 \cdot (310.85 - 298.4)}\Bigg \lvert 50
+\\+
 \Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400 \cdot 310.85^2 )}\Bigg \lvert 0.1 +
 \Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400 \cdot 298.4^2 )}\Bigg \lvert 0.1
 = 0.23 \quad \frac{[Cal]}{[g \cdot K]}
 
 $$
 
-El resultado es que el calor específico (\\(C_e\\)) tiene un valor de \\(C_e = 1,33 \pm 0.23 
-\frac{[Cal]}{[g \cdot K]}\\). El error que tiene es del 6%, un error normal si tenemos en cuenta que 
-el material utilizado no es extremadamente preciso. El principal generador de este error es el vaso de 
-precipitado, que al tener una marca cada 50 ml su error absoluto es de \\(\pm 50\\) ml, y esto hace que 
-el error aumente considerablemente. Para hacer que el resultado sea más preciso se tendría que utilizar un 
-vaso de precipitado más preciso.
+El resultado es que el calor específico (\\(C_e\\)) tiene un valor de \\(C_e = 1,33 \pm 0.23
+\frac{[Cal]}{[g \cdot K]}\\). El error que tiene es del 6%, un error normal si tenemos en cuenta que el material utilizado no es extremadamente preciso. El principal generador de este error es el vaso de precipitado, que al tener una marca cada 50 ml su error absoluto es de \\(\pm 50\\) ml, y esto hace que el error aumente considerablemente. Para hacer que el resultado sea más preciso se tendría que utilizar un vaso de precipitado más preciso.
 
-El calor específico del agua según wikipedia tiene un valor de \\(C_e = 1\frac{[Cal]}{[g \cdot K]}\\) que 
-difirere un poco del nuestro. Esto es una consecuencia de lo anterior. Además para calcular el calor 
-específico se han cogido dos valores 
+En ese caso hemos cogido el valor incial y final de temperatura, que es un poco *ficticio* pues al principio el calentador se estaba calentando. Para solucionarlo podemos coger dos valores con la función de ajuste por mínimos cuadrados:
+
+$$
+
+Y = 190\cdot 10^{-5}X + 23.13 \quad [°C]
+
+\\
+
+Y(0) = 0 + 23.13 = 23.13 \quad [°C]
+
+\\
+
+Y(11 \cdot 2.9 \cdot 870 \cdot (1/4.18)) = 190\cdot 10^{-5} \cdot 6639.47 + 23.13 = 35.76 \quad [°C]
+
+$$
+
+Con la temperatura inicial de \\(T_{inicial} = 23.13\\) ºC y la temperatura final de \\(T_{final} = 35.76\\) ºC nos saldría:
+
+$$
+
+C_e = 1.33 \quad \frac{[Cal]}{[g \cdot K]}
+
+$$
+
+Que es el mismo valor que hemos obtenido anteriormente porque la recta por mínimos cuadrados es muy próxima a los valores obtenidos en la práctica.
+
+El calor específico del agua según wikipedia tiene un valor de \\(C_e = 1\frac{[Cal]}{[g \cdot K]}\\) que **difirere un poco del nuestro**. Esto se debe a que hay una **pérdida considerable de calor** porque estamos utilizando un vaso de precipitado. Esto hace que le cueste más trabajo subir la temperatura y por consiguiente afecta al calor específico. Para **solucionarlo** se podría **utilizar un recipiente con mayor aislamiento térmico**.
 
 ### Cobre
-
-Los pasos seguidos con el el cobre han sido los mismos que para el del agua.
 #### Planteamiento
+
+Los pasos seguidos con el el cobre han sido los mismos que para el del agua:
+1. Introducimos la barra metálica de la fuente de alimentación y el termómetro en el recipiente del cobre.
+2. Encendemos la **fuente de alimentación** y la ponemos a **11 voltios a 2.9 amperios**.
+3. Tomamos los valores de temperatura cada **30 segundos**.
+
+La masa utilizada es la que viene marcada de \\(m = 1007.6 \pm 0.1 \quad g\\).
+
 #### Realización
+**Cogimos datos durante 570 segundos**, desde una **temperatura inicial de 28.0 ºC** hasta **una temperatura final de 61.2 ºC**. Los datos obetenidos se encuentran [aquí](../data/cobreexp.json). Su gráfica de Calor frente a temperatura, utilizando <a href="#defCalor">esta expresión</a>.
 
 <iframe width="901" height="557" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1441252593&amp;format=interactive"></iframe>
 
+Al igual que antes, al principio de la curva hay una desviación provocada porque el calentador se está calentado. Por lo general los valores se aproximan mucho a la recta de la regresión lineal, es casi lineal los resultados obtenidos.
+
+#### Ajuste por mínimos cuadrados
+
+Con las <a href="#defError">expresiones anteriores</a> llegamos a los siguientes resultados de la regresión lineal:
+
+$$
+
+Y = 793.8 \cdot 10^{-5} \cdot X + 26.99 \quad [ºC]
+
+\\
+
+\Delta m = 5.7 \cdot 10^{-5} \quad \frac{[ºC]}{[Cal]}
+
+$$
+
+El **error es muy pequeño**, los resultados se aproximan mucho a la recta. Esto nos indica que los resultados obtenidos son correctos.
+
+#### Cálculo de calor específico con sus errores absolutos
+
+Con las <a href="#defCalorEsp">expresiones anteriores</a> llegamos a los siguientes resultados de Calor específico y su error:
+
+$$
+
+C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})}
+
+\\
+
+= \frac{11 \cdot 2.9 \cdot 570}{4.18} \cdot \frac{1}{1007.6 \cdot (336.3 - 303.1)} = 0.13 \quad \frac{[Cal]}{[g \cdot K]}
+
+
+\\
+
+\Delta C_e = \Bigg \lvert \frac{\delta C_e}{\delta V} \Bigg \lvert \Delta V +
+\Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
+\Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
+\Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
+\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+
+\\
+
+= 1.67 \cdot 10^{-3} \quad \frac{[Cal]}{[g \cdot K]}
+$$
+
+Si lo comparamos con el valor de wikipedia, que es de \\(C_e = 0.09 \quad \frac{[Cal]}{[g \cdot K]}\\), vemos que el error no es tanto si tenemos en cuenta que el material de laboratorio utilizado no es totalmente preciso. Al igual que antes podemos ver con el resultado, en este caso menos, hay una perdida de calor por lo que le cuesta más trabajo subir de temperatura y eso se aprecia en el calor específico.
+
 ### Aluminio
 #### Planteamiento
+**Los pasos seguidos han sido iguales a los del cobre.**
+
+En este caso la **fuente de alimentación** estaba a **11 voltios a 2.9 amperios**. El aluminio tenía **una masa de** \\( m = 949.6 \pm 0.1 g\\). Igualmente tomamos **una lectura cada 30 segundos**.
+
 #### Realización
+**Cogimos datos durante 540 segundos**, desde una **temperatura incial de 23.6ºC** hasta **una temperatura final de 38.6 ºC**.  Los datos obetenidos se encuentran [aquí](../data/aluminioexp.json). Su gráfica de Calor frente a temperatura, utilizando <a href="#defCalor">esta expresión</a>.
 
 <iframe width="912" height="564" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1040109177&amp;format=interactive"></iframe>
 
+#### Ajuste por mínimos cuadrados
+
+Con las <a href="#defError">expresiones anteriores</a> llegamos a los siguientes resultados de la regresión lineal:
+
+$$
+
+Y = 37.2 \cdot 10^{-4} \cdot X + 23.45 \quad [ºC]
+
+\\
+
+\Delta m = 0.3 \cdot 10^{-4} \quad \frac{[ºC]}{[Cal]}
+
+$$
+
+#### Cálculo de calor específico con sus errores absolutos
+
+Con las <a href="#defCalorEsp">expresiones anteriores</a> llegamos a los siguientes resultados de Calor específico y su error:
+
+$$
+
+C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})}
+
+\\
+
+= \frac{11 \cdot 2.9 \cdot 540}{4.18} \cdot \frac{1}{949.6 \cdot (313.7 - 298.7)} = 0.30 \quad \frac{[Cal]}{[g \cdot K]}
+
+\\
+
+\Delta C_e = \Bigg \lvert \frac{\delta C_e}{\delta V} \Bigg \lvert \Delta V +
+\Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
+\Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
+\Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
+\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+
+\\
+
+= 3.67 \cdot 10^{-3} \quad \frac{[Cal]}{[g \cdot K]}
+
+$$
+
+Si lo comparamos con el valor de wikipedia, que es de \\(C_e = 0.21 \quad \frac{[Cal]}{[g \cdot K]}\\), nos ocurre igual que en los casos anteriores.
+
 ### Hierro
 #### Planteamiento
+
+**Los pasos seguidos han sido igual que los del cobre.**
+
+En este caso la **fuente de alimentación** estaba a **11 voltios a 2.9 amperios**. El Hierro tenía **una masa de** \\( m = 615.2 \pm 0.1 g\\). Igualmente tomamos **una lectura cada 30 segundos**.
+
 #### Realizacion
+**Cogimos datos durante 600 segundos**, desde una **temperatura incial de 33.3ºC** hasta **una temperatura final de 78.5 ºC**.  Los datos obetenidos se encuentran [aquí](../data/hierroexp.json). Su gráfica de Calor frente a temperatura, utilizando <a href="#defCalor">esta expresión</a>.
 
 <iframe width="933" height="577" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1622749977&amp;format=interactive"></iframe>
 
+#### Ajuste por mínimos cuadrados
+
+Con las <a href="#defError">expresiones anteriores</a> llegamos a los siguientes resultados de la regresión lineal:
+
+$$
+
+Y = 101.1 \cdot 10^{-4} \cdot X + 33.0 \quad [ºC]
+
+\\
+
+\Delta m = 0.3 \cdot 10^{-4} \quad \frac{[ºC]}{[Cal]}
+
+$$
+
+#### Cálculo de calor específico con sus errores absolutos
+
+$$
+
+C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inicial})}
+
+\\
+
+= \frac{11 \cdot 2.9 \cdot 600}{4.18} \cdot \frac{1}{615.2 \cdot (353.6 - 308.4)} = 0.16 \quad \frac{[Cal]}{[g \cdot K]}
+
+\\
+
+\Delta C_e = \Bigg \lvert \frac{\delta C_e}{\delta V} \Bigg \lvert \Delta V +
+\Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
+\Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
+\Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
+\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+
+\\
+
+= 2.1 \cdot 10^{-3} \quad \frac{[Cal]}{[g \cdot K]}
+
+$$
+
+Si lo comparamos con el valor de wikipedia, que es de \\(C_e = 0.11 \quad \frac{[Cal]}{[g \cdot K]}\\), nos ocurre igual que en los casos anteriores.
+
+
+## Conclusiones
+
+Sustancia | \\(C_e \quad [Cal]/[g \cdot K]\\) | \\(\Delta C_e \quad [Cal]/[g \cdot K]\\) | Regresión lineal [ºC]| Error regresión lineal \\((\Delta m \quad [ºC][Cal])\\)
+--- | --- | --- | --- | ---
+Agua | \\(1.33\\) | \\(0.23\\) | \\(Y = 190\cdot 10^{-5}X + 23.13\\) | \\(1.0\cdot 10^{-5}\\)
+Cobre | \\(0.13\\) | \\(1.67 \cdot 10^{-3}\\) | \\(Y = 793.8 \cdot 10^{-5} \cdot X + 26.99\\) | \\(5.7 \cdot 10^{-5}\\)
+Aluminio | \\(0.30\\) | \\(3.67 \cdot 10^{-3}\\) | \\(Y = 37.2 \cdot 10^{-4} \cdot X + 23.45\\) | \\(0.3 \cdot 10^{-4}\\)
+Hierro | \\(0.16\\) | \\(2.1 \cdot 10^{-3}\\) | \\(Y = 101.1 \cdot 10^{-4} \cdot X + 33.0\\) | \\( 0.3 \cdot 10^{-4}\\)
+
+<iframe width="912" height="564" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNL8X6-7JWsLQzLOxtiRmdErXjTLcZaDdVD--Rjm3LXv-7nbX-OD_bAJ_yjLdg7cwYczgybkgkwK72/pubchart?oid=1176409807&amp;format=interactive"></iframe>
+
+Los resultados obtenidos se ciñen a la realidad tomando en cuenta que el material utilizado no es el muy preciso. Los resultados delatan que hay una **pérdida considerable de calor** porque los recipientes utilizados no están aislados térmicamente. Esto hace que le cueste más trabajo subir la temperatura y por consiguiente afecta al calor específico. Para **solucionarlo** se podría **utilizar un recipiente con mayor aislamiento térmico**.
+
+amil101@debian:~$ EXIT
+
 ### Bibliografía
-* https://es.wikipedia.org/wiki/Calor_espec%C3%ADfico
+* [https://es.wikipedia.org/wiki/Calor_espec%C3%ADfico](https://es.wikipedia.org/wiki/Calor_espec%C3%ADfico)
 
-* https://developers.google.com/chart/interactive/docs/gallery/linechart#examples
+* [https://developers.google.com/chart/interactive/docs/gallery/linechart#examples](https://developers.google.com/chart/interactive/docs/gallery/linechart#examples)
 
-* https://es.wikipedia.org/wiki/Potencia_(f%C3%ADsica)
+* [https://es.wikipedia.org/wiki/Potencia_(f%C3%ADsica)](https://es.wikipedia.org/wiki/Potencia_(f%C3%ADsica))
