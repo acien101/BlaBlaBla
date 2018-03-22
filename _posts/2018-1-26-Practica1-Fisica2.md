@@ -131,7 +131,8 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
 \Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
 \Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
-\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+\Bigg \lvert \frac{\delta C_e}{\delta T_{inicial}} \Bigg \lvert \Delta T +
+\Bigg \lvert \frac{\delta C_e}{\delta T_{final}} \Bigg \lvert \Delta T
 
 \\
 = \Bigg \lvert \frac{I \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta V +
@@ -140,8 +141,8 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{V \cdot I}{4.18 \cdot m \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta t +
 \Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m^2 \cdot (T_{final} - T_{inicial})}\Bigg \lvert \Delta m
 \\+
-\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{final}^2 )}\Bigg \lvert \Delta T +
-\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot T_{inicial}^2 )}\Bigg \lvert \Delta T
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})^2}\Bigg \lvert \Delta T +
+\Bigg \lvert \frac{V \cdot I \cdot t}{4.18 \cdot m \cdot (T_{final} - T_{inicial})^2}\Bigg \lvert \Delta T
  \quad \frac{[Cal]}{[g \cdot K]}
 $$
 
@@ -286,7 +287,8 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
 \Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
 \Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
-\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+\Bigg \lvert \frac{\delta C_e}{\delta T_{inicial}} \Bigg \lvert \Delta T +
+\Bigg \lvert \frac{\delta C_e}{\delta T_{final}} \Bigg \lvert \Delta T
 
 \\
 = \Bigg \lvert \frac{2.9 \cdot 870}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.1 +
@@ -295,9 +297,10 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{11 \cdot 2.9}{4.18 \cdot 400 \cdot (310.85 - 298.4)}\Bigg \lvert 0.01 +
 \Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400^2 \cdot (310.85 - 298.4)}\Bigg \lvert 50
 \\+
-\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400 \cdot 310.85^2 )}\Bigg \lvert 0.1 +
-\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 400 \cdot 298.4^2 )}\Bigg \lvert 0.1
-= 0.23 \quad \frac{[Cal]}{[g \cdot K]}
+\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 100 \cdot (310.85 - 298.4)^2}\Bigg \lvert \Delta 0.1 +
+\Bigg \lvert \frac{11 \cdot 2.9 \cdot 870}{4.18 \cdot 100 \cdot (310.85 - 298.4)^2}\Bigg \lvert \Delta 0.1
+
+= 0.19 \quad \frac{[Cal]}{[g \cdot K]}
 
 $$
 
@@ -384,7 +387,8 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
 \Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
 \Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
-\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+\Bigg \lvert \frac{\delta C_e}{\delta T_{inicial}} \Bigg \lvert \Delta T +
+\Bigg \lvert \frac{\delta C_e}{\delta T_{final}} \Bigg \lvert \Delta T
 
 \\
 
@@ -436,7 +440,8 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
 \Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
 \Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
-\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+\Bigg \lvert \frac{\delta C_e}{\delta T_{inicial}} \Bigg \lvert \Delta T +
+\Bigg \lvert \frac{\delta C_e}{\delta T_{final}} \Bigg \lvert \Delta T
 
 \\
 
@@ -488,7 +493,8 @@ C_e = \frac{V \cdot I \cdot t}{4.18} \cdot \frac{1}{m \cdot (T_{final} - T_{inic
 \Bigg \lvert \frac{\delta C_e}{\delta I} \Bigg \lvert \Delta I +
 \Bigg \lvert \frac{\delta C_e}{\delta t} \Bigg \lvert \Delta t +
 \Bigg \lvert \frac{\delta C_e}{\delta m} \Bigg \lvert \Delta m +
-\Bigg \lvert \frac{\delta C_e}{\delta T} \Bigg \lvert \Delta T
+\Bigg \lvert \frac{\delta C_e}{\delta T_{inicial}} \Bigg \lvert \Delta T +
+\Bigg \lvert \frac{\delta C_e}{\delta T_{final}} \Bigg \lvert \Delta T
 
 \\
 
