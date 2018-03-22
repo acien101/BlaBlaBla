@@ -98,6 +98,16 @@ El oscilador problema, arriba una foto, es uno del que no tenemos ninguna inform
 
 <img src="../images/lisajouse.png" width="29%" style="display: block; margin: 0 auto;">
 
+Si la relación entre las frecuencias es de números enteros
+
+$$
+
+\frac{\omega_1}{\omega_2} = \frac{n_1}{n_2}
+
+$$
+
+Las trayectorias cerradas obtenidas en el osciloscopio son las "*curvas de Lissajous*".
+
 #### Procedimiento
 
 Conectamos la salida del oscilador problema al eje X del osciloscopio y conectamos la salida del generador de ondas al eje Y del osciloscopio. Configuramos el osciloscopio en XY con los dos canales.
@@ -120,7 +130,28 @@ Con esta información llegamos a la conclusión de que la frecuencia del oscilad
 
 #### Error en la medida
 
+El error del generado de funciones *problema* es desconocido. En cambio el error de generado es \\(\Delta f_{generador} = 10 Hz\\). Para calcular su error utilizamos la ecuación anterior para el caso 1:2 :
 
+$$
+
+\frac{\omega_1}{\omega_2} = \frac{n_1}{n_2} \Rightarrow \frac{f_1}{f_2} = \frac{n_1}{n_2} \Rightarrow f_1 = \frac{n_1}{n_2} \cdot f_2
+
+\\
+
+\Delta f_1 = \bigg \lvert \frac{\delta f_1}{\delta f_2} \bigg \lvert \cdot \Delta f_2 = \frac{1}{2} \cdot 10 = 5 \quad Hz
+
+
+$$
+
+Con lo que el resultado final será:
+
+$$
+
+f_{oscilador} = 850 \pm 5 \quad Hz
+
+$$
+
+El error del oscilador problema utilizando este método es muy pequeño. Esto se debe a que de igual forma, **el error del generador es bastante pequeño** (10 Hz). Se podría decir que, **este método para determinar el desfase de una señal es muy efectivo**.
 
 ### Tercer bloque: Medida de diferencia de fase por el método de la eclipse
 
@@ -248,7 +279,21 @@ $$
 \Delta R = \bigg \lvert \frac{\delta R}{\delta f} \bigg \lvert \Delta f +  
 \bigg \lvert \frac{\delta R}{\delta tg \ \varphi} \bigg \lvert \Delta tg     \ \varphi =  \frac{\Delta f}{2 \pi \ C \ tg \ \varphi \ f^2} + \frac{\Delta tg \ \varphi}{2 \pi \ f\ C \ (tg \ \varphi)^2} =
 
+\\
+
+\frac{10}{2 \pi \ 100\cdot 10^{-6} \ tg \ 30º \ 270^2} + \frac{0.1}{2 \pi \ 270 \ 100\cdot 10^{-6} \ (tg \ 30)^2} =
+2.15 \omega
 $$
+
+Es decir, nos queda un resultado:
+
+$$
+
+R = 10209.8 \pm 2.15 \omega
+
+$$
+
+Que se parece mucho al valor real de la resistencia, que es de \(10K \pm 500 \omega\), dentro de nuestro resultado. En este caso hemos despreciado el error del condensador, pero igualmente sigue siendo un error muy pequeño, este método para medir la resistencia es bastante efectivo.
 
 ### Bibliografía
 
