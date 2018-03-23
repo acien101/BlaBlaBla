@@ -282,18 +282,18 @@ $$
 \\
 
 \frac{10}{2 \pi \ 100\cdot 10^{-6} \ tg \ 30º \ 270^2} + \frac{0.1}{2 \pi \ 270 \ 100\cdot 10^{-6} \ (tg \ 30)^2} =
-2.15 \omega
+2.15 \Omega
 $$
 
 Es decir, nos queda un resultado:
 
 $$
 
-R = 10209.8 \pm 2.15 \omega
+R = 10209.8 \pm 2.15 \Omega
 
 $$
 
-Que se parece mucho al valor real de la resistencia, que es de \(10K \pm 500 \omega\), dentro de nuestro resultado. En este caso hemos despreciado el error del condensador, pero igualmente sigue siendo un error muy pequeño, este método para medir la resistencia es bastante efectivo.
+Que se parece mucho al valor real de la resistencia, que es de \(10K \pm 500 \Omega\), dentro de nuestro resultado. En este caso hemos despreciado el error del condensador, pero igualmente sigue siendo un error muy pequeño, este método para medir la resistencia es bastante efectivo.
 
 ### Bibliografía
 
