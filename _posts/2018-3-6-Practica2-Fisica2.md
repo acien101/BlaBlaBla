@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false
 title: Práctica 2 - Física 2 Oscilaciones
 ---
 
