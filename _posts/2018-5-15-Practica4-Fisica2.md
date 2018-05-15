@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 title: Práctica 4 - Física 2 Banco de óptica
 ---
 
@@ -78,7 +78,7 @@ s = 22.6 \cdot 10^{-2} \ m \qquad s' = 91.4 - 22.6 = 68.8 \cdot 10^{-2} \ m
 
 \\
 
-P = \frac{1}{f'}= \frac{1}{68.8 \cdot 10^{-2}} + \frac{1}{22.6 \cdot 10^{-2}} = 5.87 \ dioptrias
+P = \frac{1}{f'}= \frac{1}{68.8 \cdot 10^{-2}} + \frac{1}{22.6 \cdot 10^{-2}} = 5.87 \ dioptrías
 
 $$
 
@@ -90,7 +90,7 @@ s = 68.5 \cdot 10^{-2} \ m \qquad s' = 91.4 - 68.5 = 22.9 \cdot 10^{-2} \ m
 
 \\
 
-P = \frac{1}{f'}= \frac{1}{22.9 \cdot 10^{-2}} + \frac{1}{68.5 \cdot 10^{-2}} = 5.83 \ dioptrias
+P = \frac{1}{f'}= \frac{1}{22.9 \cdot 10^{-2}} + \frac{1}{68.5 \cdot 10^{-2}} = 5.83 \ dioptrías
 
 $$
 
@@ -104,11 +104,11 @@ $$
 
 \\
 
-= \frac{1}{(68.8 \cdot 10^{-2})^2} 0.001 + \frac{1}{(22.6 \cdot 10^{-2})^2} 0.001 = 0.02 \ dioptrias
+= \frac{1}{(68.8 \cdot 10^{-2})^2} 0.001 + \frac{1}{(22.6 \cdot 10^{-2})^2} 0.001 = 0.02 \ dioptrías
 
 \\
 
-\Rightarrow P = \frac{1}{f'}= \frac{1}{68.8 \cdot 10^{-2}} + \frac{1}{22.6 \cdot 10^{-2}} = 5.87 \pm 0.02 \ dioptrias
+\Rightarrow P = \frac{1}{f'}= \frac{1}{68.8 \cdot 10^{-2}} + \frac{1}{22.6 \cdot 10^{-2}} = 5.87 \pm 0.02 \ dioptrías
 
 $$
 
@@ -116,11 +116,11 @@ Por tanto, el error **para la segunda posición** será de:
 
 $$
 
-\Delta \frac{1}{f'} = \frac{1}{(22.9 \cdot 10^{-2})^2} 0.001 + \frac{1}{(68.5 \cdot 10^{-2})^2} 0.001 = 0.02 \ dioptrias
+\Delta \frac{1}{f'} = \frac{1}{(22.9 \cdot 10^{-2})^2} 0.001 + \frac{1}{(68.5 \cdot 10^{-2})^2} 0.001 = 0.02 \ dioptrías
 
 \\
 
-\Rightarrow P = \frac{1}{f'}= \frac{1}{22.9 \cdot 10^{-2}} + \frac{1}{68.5 \cdot 10^{-2}} = 5.83 \pm 0.02 \ dioptrias
+\Rightarrow P = \frac{1}{f'}= \frac{1}{22.9 \cdot 10^{-2}} + \frac{1}{68.5 \cdot 10^{-2}} = 5.83 \pm 0.02 \ dioptrías
 
 $$
 
@@ -168,7 +168,54 @@ Moviendo las lentes hemos encontrado las siguientes posiciones donde la imagen e
 |---|---|---|---|
 | #0 | \\(0.272 \pm 0.001\\) | \\(0.253 \pm 0.001\\) | \\(0.389 \pm 0.001\\) |
 | #1 | \\(0.465 \pm 0.001\\) | \\(0.17 \pm 0.001\\) | \\(0.279 \pm 0.001\\) |
-| #2 | \\(0.655 \pm 0.001\\) | \\(0.068 \pm 0.001\\) | \\(0.191 \pm 0.001\\) | 
+| #2 | \\(0.655 \pm 0.001\\) | \\(0.068 \pm 0.001\\) | \\(0.191 \pm 0.001\\) |
+
+#### Determinar la potencia de una lente divergente con su error
+
+Para hacer esta parte vamos a coger la primera posición, es decir:
+
+$$
+
+s_1 = 0.272 \pm 0.001 \ m; \qquad s'_ 2 = 0.389 \pm 0.001 \ m; \qquad d = 0.253 \pm 0.001 \ m
+
+$$
+
+De la parte anterior, sabemos que la potencia de la lente será \\(D_1 = 5.87 \pm 0.02\\) dioptrías. Entonces podemos determinar \\(s'_ 1\\):
+
+$$
+
+5.87 = \frac{1}{s'_ 1} + \frac{1}{0.272} \Rightarrow s'_ 1 = 0,454 \ m
+
+$$
+
+Con todo lo anterior ya podremos determinar A y B, y también la potencia de la lente divergente:
+
+$$
+
+A = \frac{1}{s_1} = \frac{1}{0.272} = 3.67 \ m^{-1} \qquad B = \frac{1}{s'_ 2} = \frac{1}{0.389} = 2.57 \ m^{-1}
+
+
+\\
+
+D_2 = B - \frac{D_1 - A}{1 - d(D_1 - A)} = 2.57 - \frac{5.87 - 3.67}{1 - 0.253(5.87 - 3.67)} = -2.43 \ dioptrías
+
+$$
+
+Para calcular su error será:
+
+$$
+
+\Delta D_2 = \Bigg \lvert \frac{\delta D_2}{\delta B} \Bigg \lvert \Delta B + \Bigg \lvert \frac{\delta D_2}{\delta D_1} \Bigg \lvert \Delta D_1 + \Bigg \lvert \frac{\delta D_2}{\delta A} \Bigg \lvert \Delta A + \Bigg \lvert \frac{\delta D_2}{\delta d} \Bigg \lvert \Delta d = 0.033 \ dioptrías
+
+\\
+
+\Rightarrow D_2 = -2.43 \pm 0.033 \ dioptrías
+
+$$
+
+Los resultados obtenidos son totalmente razonables. Como por ejemplo que la lente divergente tenga potencia negativa, pues es cómo debería de ser. Los valores de los errores son muy bajos, eso también nos da una idea de que vamos en buen camino.
+
+amil101@debian:~$ EXIT
 
 ### Bibliografía
 * [https://commons.wikimedia.org/wiki/File:Focal-length-a.png](https://commons.wikimedia.org/wiki/File:Focal-length-a.png)

@@ -296,6 +296,8 @@ $$
 
 Que se parece mucho al valor real de la resistencia, que es de \(10K \pm 500 \Omega\), dentro de nuestro resultado. En este caso hemos despreciado el error del condensador, pero igualmente sigue siendo un error muy pequeño, este método para medir la resistencia es bastante efectivo.
 
+amil101@debian:~$ EXIT
+
 ### Bibliografía
 
 * [https://es.wikipedia.org/wiki/Osciloscopio](https://es.wikipedia.org/wiki/Osciloscopio)

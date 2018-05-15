@@ -1,0 +1,16 @@
+{
+    "datos" : [
+        { "velocidad" : 352.5, "frecuencia" : 500},
+        { "velocidad" : 348, "frecuencia" : 750},
+        { "velocidad" : 350, "frecuencia" : 1000},
+        { "velocidad" : 352.5, "frecuencia" : 1250},
+        { "velocidad" : 351, "frecuencia" : 1500},
+        { "velocidad" : 350, "frecuencia" : 1750},
+        { "velocidad" : 356, "frecuencia" : 2000},
+        { "velocidad" : 342, "frecuencia" : 2250},
+        { "velocidad" : 350, "frecuencia" : 2500},
+        { "velocidad" : 346.5, "frecuencia" : 2750},
+        { "velocidad" : 348, "frecuencia" : 3000},
+        { "velocidad" : 344.5, "frecuencia" : 3250}
+    ]
+}

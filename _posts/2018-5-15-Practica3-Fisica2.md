@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 title: Práctica 3 - Física 2 Velocidad del sonido
 ---
 Esta práctica consistirá en medir la velocidad del sonido en el aire con un tubo de Kundt, micrófono y altavoz, generador de una frecuencia variable, y un oscilocopio.
@@ -166,6 +166,8 @@ Por tanto, el error no es mismo para todas las medidas, porque para frecuencias 
 |344.5|10.6|3250|\\(\pm\\)17.31|
 
 Viendo los resultados, todos ellos contemplan el valor 350 m/s entre sus límites. Estos es una muy buena señal, porque nuestro valores experimentales se ciñen a la teoría.
+
+amil101@debian:~$ EXIT
 
 ### Bibliografía
 * [https://commons.wikimedia.org/wiki/File:Standing_wave_2.gif](https://commons.wikimedia.org/wiki/File:Standing_wave_2.gif)
