@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Práctica 1 - Física 2 Calores específicos
-published: false
+published: true
 ---
 
 Esta práctica consistirá en determinar los calores específicos de diferentes sustancias. El material proporcionado es el siguiente:
