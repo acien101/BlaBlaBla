@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 title: Práctica 3 - Física 2 Velocidad del sonido
 ---
 Esta práctica consistirá en medir la velocidad del sonido en el aire con un tubo de Kundt, micrófono y altavoz, generador de una frecuencia variable, y un oscilocopio.
