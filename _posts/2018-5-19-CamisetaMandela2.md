@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Diseño molones 2
 ---
-
+![](../images/shirt/fanso.png)
 ![](../images/shirt/mods/2_mod.jpg)
 ![](../images/shirt/mods/3_mod.jpg)
 ![](../images/shirt/mods/4._mod1.jpg)
