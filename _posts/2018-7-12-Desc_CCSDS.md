@@ -9,7 +9,7 @@ title: Descriptción paquete CCSDS
 ![](../images/CCSDS_1.png)
 
 ## Packet Primary Header
-![](../images/CCSDS_2.png)
+![](../images/CCSDS_2.png)  
 **Packet Version Number**: Binary encodede Version Number  
 **Packet type**: Telemetry '0', for telecommand '1'  
 **Secondary Header Flag**: '1' fi Packet Secondary Header is present, 'o' if Packet Secondaty Header is not present  
