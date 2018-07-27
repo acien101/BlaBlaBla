@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Práctica 4 - Física 2 Banco de óptica
 ---
 
