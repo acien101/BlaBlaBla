@@ -199,6 +199,7 @@ Para decodificar emisiones de SSTV, se puede utilizar software cómo **qsstv**.
 ## Picosatélites
 
 ![Sample pisosat](../images/picosatelite.jpg)
+https://www.itu.int/dms_pub/itu-r/md/12/itur.manta/c/R12-ITUR.MANTA-C-0014!!PDF-S.pdf
 
 ### ¿Cuantos satélites hay en órbita a la tierra? ¿Cómo determinar su posición?
 
@@ -235,7 +236,7 @@ Lo usual es que esta información esté pública y nos informen la frecuencia de
 
 ---
 
-## Radioclub ETSIT UPM EA4RTC
+## Radioclub ETSIT UPM EA4RCT
 
 ![](../images/antena-HF.jpg)
 
