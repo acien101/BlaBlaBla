@@ -4,11 +4,14 @@ published: true
 title: Taller de Arduino
 ---
 
+<div style="text-align:center;"><br/>Lunes 2 de Febrero del 2018 / ETSIT UPM</div>
+
 # BORRADOR DE LA ACTIVIDAD
 
 <p align="center">
-  <img src="/recursos/2018-08-23/RadioClub-ETSIT-UPM.jpg" alt="Radioclub de la ETSIT-UPM" width="59%"/>
-  <img src="/recursos/2018-08-23/antena-HF.jpg" alt="Antena de HF en la azotea de la ETSIT UPM" width="36%"/>
+  <img src="../images/capucha.gif" alt="Foto de adafruit" width="49%"/>
+  <img src="../images/gafas.gif" alt="Gafas" width="49%"/>
+  <img src="../images/patin.gif" alt="Gafas" width="66%"/>
 </p>
 
 ### DESCRIPCIÓN
@@ -49,3 +52,13 @@ Hará falta un ordenador, a ser posible con el programar Arduino instalado.
 Tras la jornada es habitual que parte del grupo nos vayamos de tapeo por las cercanías, perfecto para ir conociéndonos más entre nosotros.
 
 ---
+
+### Localizacion
+
+<p>Lugar: <strong><a href="sitio">Salón de actos del edificio C, ETSIT UPM, Madrid</a></strong>, {{page.locality}}.</p>
+<p>Fecha: <strong>Lunes 2 de Febrero del 2018</strong></p>
+<p>Hora: <strong>de 19:30 a 21:00</strong></p>
+
+---
+
+![Cartel](../images/Taller_arduino.png)
