@@ -10,9 +10,11 @@ https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-
 
 https://www.ansible.com/overview/how-ansible-works
 
-https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html
+[Getting started](https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html)
 
-https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
+[Introducción a comandos adhoc [Cosas sencillas que no necesitan crear un playbook]](https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html)
+
+[Working with inventor](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)
 
 Un ejemplillo de como configurar docker con ansible:
 
@@ -43,3 +45,32 @@ Para que no esté todo el rato pidiendo contraseña de administrador cuando se i
 
     $ ssh-agent bash
     $ ssh-add ~/.ssh/id_rsa
+
+Runnign ping as diferent hosts
+
+```
+# as bruce
+$ ansible all -m ping -u bruce
+# as bruce, sudoing to root
+$ ansible all -m ping -u bruce --sudo
+# as bruce, sudoing to batman
+$ ansible all -m ping -u bruce --sudo --sudo-user batman
+
+# With latest version of ansible `sudo` is deprecated so use become
+# as bruce, sudoing to root
+$ ansible all -m ping -u bruce -b
+# as bruce, sudoing to batman
+$ ansible all -m ping -u bruce -b --become-user batman
+```
+ansible localhost -m apt -a "name=gedit state=latest" -u facien --become --ask-become-pass --become-method sudo
+Running command on all hosts
+
+```
+$ ansible all -a "/bin/echo hello"
+```
+
+---
+
+Cuando haces ``` sudo whoami ``` las respuesta es root. Porque el usuario no tiene permisos de root, **quien los tiene es el usuario root**.
+
+ 
