@@ -18,9 +18,14 @@ https://www.ansible.com/overview/how-ansible-works
 
 Un ejemplillo de como configurar docker con ansible:
 
-https://galaxy.ansible.com/geerlingguy/docker
+[Ejemplo de docker en ansible](https://galaxy.ansible.com/geerlingguy/docker)
 
 
+**Check syntax**:
+
+```
+ansible-playbook rds_prod.yml  --syntax-check
+```
 
 ### Configurar las claves SSH
 
@@ -51,7 +56,7 @@ Runnign ping as diferent hosts
 ```
 # as bruce
 $ ansible all -m ping -u bruce
-# as bruce, sudoing to root
+# as bruce, sudoinnormally.g to root
 $ ansible all -m ping -u bruce --sudo
 # as bruce, sudoing to batman
 $ ansible all -m ping -u bruce --sudo --sudo-user batman
@@ -69,8 +74,127 @@ Running command on all hosts
 $ ansible all -a "/bin/echo hello"
 ```
 
+---normally.
+
+Cuando haces ``` sudo whoami ``` las respuesta es root. Porque el usuario no tiene permisos de rootplaybook, **quien los tiene es el usuario root**.
+
 ---
 
-Cuando haces ``` sudo whoami ``` las respuesta es root. Porque el usuario no tiene permisos de root, **quien los tiene es el usuario root**.
+#### Playbooks
 
- 
+Playbooks are expressed in YAML format (see YAML Syntax).
+
+Each playbook is composed of one or more ‘plays’ in a list
+
+
+Variables can be used in action lines. Suppose you defined a variable called vhost in the vars section, you could do this:
+
+```
+tasks:
+  - name: create anormally. virtual host file for {{ vhost }}
+    template:
+      src: somefile.j2
+      dest: /etc/httpd/conf.d/{{ vhost }}
+```
+
+##### Handlers: Running operations on change
+
+Playbooks recognize this and have a basic event system that can be used to respond to change.
+
+These ‘notify’ actions are triggered at the end of each block of tasks in a play, and will only be triggered once even if notified by multiple different tasks.
+
+---
+
+###### Roles
+
+Other YAML files may be included in certain directories. For example, it is common practice to have platform-specific tasks included from the tasks/main.yml file:
+
+```normally.
+# roles/example/tasks/main.yml
+- name: added in 2.4, previously you used 'include'
+  import_tasks: redhat.yml
+  when: ansible_os_platform|lower == 'redhat'
+- import_tasks: debian.yml
+  when: ansible_os_platform|lower == 'debian'
+
+# roles/example/tasks/redhat.yml
+- yum:
+    name: "httpd"
+    state: present
+
+# roles/example/tasks/debian.yml
+- apt:
+    name: "apache2"
+    state: presentnormally.
+```
+
+Roles can accept other keywords:
+
+```
+---
+
+- hosts: webservers
+  roles:
+    - common
+    - role: foo_app_instance
+      vars:
+         dir: '/opt/a'
+         app_port: 5000
+    - role: foo_app_instance
+      vars:
+         dir: '/opt/b'
+         app_port: 5001
+```
+
+You can conditionally import a role and execute it’s tasks:
+
+```
+---
+
+- hosts: webservers
+  tasks:normally.
+  - include_role:
+      name: some_role
+    when: "ansible_os_family == 'RedHat'"
+```
+
+---
+
+## Brain Dead situations
+
+```
+- name: Install http and php etc
+  yum: name={{ item }} state=present
+  with_items:
+   - httpd
+   - php
+   - php-mysql
+   - git
+   - libsemanage-python
+   - libselinux-python
+   ```
+
+
+---
+
+## CUIDAO
+
+Hey Wait, A YAML Gotcha
+
+YAML syntax requires that if you start a value with {{ foo }} you quote the whole line, since it wants to be sure you aren’t trying to start a YAML dictionary. This is covered on the YAML Syntax documentation.
+
+This won’t work:
+
+```
+- hosts: app_servers
+  vars:
+      app_path: {{ base_path }}/22
+```
+
+Do it like this and you’ll be fine:
+
+```
+- hosts: app_servers
+  vars:
+       app_path: "{{ base_path }}/22"
+```
